@@ -119,7 +119,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         var packedEvents = ArrayList<MonthViewEvent>()
         var nextFreeDayIndexOnRow = 0
         while(packedEvents.size < allEvents.size) {
-            var nextEventOnRow = eventsSet.ceiling(MonthViewEvent(0,"",0,0,nextFreeDayIndexOnRow,1000000000,0,false,false))
+            var nextEventOnRow = eventsSet.ceiling(MonthViewEvent(0,"",0,0,nextFreeDayIndexOnRow,-1000000000,0,false,false))
             if(nextEventOnRow != null) {
                 packedEvents.add(nextEventOnRow)
                 nextFreeDayIndexOnRow = nextEventOnRow.startDayIndex + nextEventOnRow.daysCnt
